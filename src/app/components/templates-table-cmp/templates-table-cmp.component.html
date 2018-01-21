@@ -1,0 +1,17 @@
+<h2>Templates</h2>
+<table class="table table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col" style="width: 60px">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Last modified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tmp of templates; let i = index">
+      <td>{{ tmp.id }}</td>
+      <td><a [routerLink]="['/template', tmp.id]">{{ tmp.name }}</a></td>
+      <td>{{ tmp.modified | date:'medium' }}</td>
+    </tr>
+  </tbody>
+</table>
